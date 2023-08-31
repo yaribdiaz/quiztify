@@ -42,7 +42,6 @@ export const useChooseStore = () => {
 
     const handleSetChooseInitialState = () => {
         const initialState = {
-            search:'',
             playlistInfo:'',
             players:'2',
             songs:'10',

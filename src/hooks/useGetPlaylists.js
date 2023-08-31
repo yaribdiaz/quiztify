@@ -102,16 +102,6 @@ export const useGetPlaylists = () => {
     }
 
     const getPlaylistsSearch = async () => {
-        // const {data} = await axios(`https://api.spotify.com/v1/search`,{
-        //     headers: {
-        //         Authorization: `Bearer ${spotifyToken}`
-        //     },
-        //     params: {
-        //         q:search,
-        //         type:'playlist',
-        //         limit:50
-        //     }
-        // })
 
         const playlistSearch = axios.create({
           baseURL: 'https://api.spotify.com/v1',
