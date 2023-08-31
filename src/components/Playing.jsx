@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react"
-
+import { useEffect, useRef } from "react"
 import { usePlayingStore } from "../hooks/usePlayingStore"
 import { usePlaying } from "../hooks/usePlaying"
 import AvatarPoints from "./AvatarPoints"
@@ -7,7 +6,6 @@ import BarTime from "./BarTime"
 import CardSong from "./CardSong"
 import PauseGame from "./PauseGame"
 import PossibleAnswers from "./PossibleAnswers"
-import Carreritas from "./Carreritas"
 import CongratsAnswer from "./CongratsAnswer"
 
 const Playing = () => {
@@ -23,7 +21,6 @@ const Playing = () => {
     pause:gamePause,
     song,
     player:pause, // ? PLAY/PAUSE
-    handleSetPlayer,
     playerSongEnd:play,
     handleSetPlayerSongEnd:setPlay, // ? THE END SONG O START
   } = usePlayingStore()

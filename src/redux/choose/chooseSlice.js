@@ -33,9 +33,6 @@ export const chooseSlice = createSlice ({
             state.songs = action.payload.songs,
             state.guess = action.payload.guess
         },
-        // set:(state, action) => {
-        //     state. = action.payload
-        // },
     }
 })
 

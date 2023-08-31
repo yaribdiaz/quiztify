@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
 import { usePlayingStore } from "../hooks/usePlayingStore";
 
@@ -13,7 +13,7 @@ const canvasStyles = {
 };
 
 const CongratsAnswer = () => {
-    const {congratsAnswer, playingState} = usePlayingStore()
+    const {congratsAnswer} = usePlayingStore()
     
     useEffect(() => {
         if(congratsAnswer){
@@ -67,7 +67,6 @@ const CongratsAnswer = () => {
 
   return (
     <div>
-      {/* <button onClick={fire}>Fire</button> */}
       <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
     </div>
   )

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { usePlayingStore } from "../hooks/usePlayingStore"
 import FireworksConfetti from "./FirewroksConfetti"
+import trophy from "../assets/trophy.png"
 
 const EndGame = () => {
     const navigate = useNavigate()
@@ -33,7 +34,7 @@ const EndGame = () => {
             <div className="border-3 p-2 bg-orange-500/90 shadow-lg shadow-gray-500">
                 <div className="p-2 bg-black rounded">
                     <img 
-                        src="https://img.icons8.com/?size=512&id=vpPUQCWW7lYo&format=png"
+                        src={trophy}
                         alt="trophy"
                         className="w-40 md:w-52 lg:w-64" 
                     />

@@ -25,12 +25,12 @@ const CardPlaylists = ({playlist}) => {
       <Link
         to={`${playlist?.id}`}
         onClick={handlePlaylistSelected} 
-        className={`${params.id && 'pointer-events-none'} py-1 hover:saturate-0 h-48 md:h-full w-36 md:w-60 flex flex-col justify-between bg-zinc-800 hover:bg-zinc-700 rounded-md cursor-pointer transition-all duration-300`}
+        className={`${params?.id && 'pointer-events-none'} py-1 hover:saturate-0 h-48 md:h-full w-36 md:w-60 flex flex-col justify-between bg-zinc-800 hover:bg-zinc-700 rounded-md cursor-pointer transition-all duration-300`}
       >
         <div className="p-2">
             <Image
                 className="md:w-full shadow-md shadow-black " 
-                src={playlist.images[0]?.url} 
+                src={playlist?.images[0]?.url} 
                 alt="playlist cover" 
             />
         </div>

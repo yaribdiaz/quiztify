@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import  { useCallback, useEffect, useRef, useState } from "react";
 import ReactCanvasConfetti from "react-canvas-confetti";
 
 function randomInRange(min, max) {
@@ -48,17 +48,6 @@ export default function FireworksConfetti() {
       setIntervalId(setInterval(nextTickAnimation, 400));
     }
   }, [intervalId, nextTickAnimation]);
-
-  const pauseAnimation = useCallback(() => {
-    clearInterval(intervalId);
-    setIntervalId(null);
-  }, [intervalId]);
-
-  const stopAnimation = useCallback(() => {
-    clearInterval(intervalId);
-    setIntervalId(null);
-    refAnimationInstance.current && refAnimationInstance.current.reset();
-  }, [intervalId]);
 
   useEffect(() => {
     return () => {
