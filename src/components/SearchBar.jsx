@@ -16,7 +16,9 @@ const SearchBar = () => {
         <input 
             type="text"
             placeholder="Buscar tu playlist favorita y adivina..."
-            onChange={e => handleSetSearch(e.target.value)}
+            onChange={e => {
+              e.preventDefault()
+              handleSetSearch(e.target.value)}}
             value={search}
             className={`${search ? 'rounded-l' : 'rounded'} w-full text-black bg-white shadow-lg py-2 md:py-1 focus:outline-none px-2 font-semibold`}
         />
