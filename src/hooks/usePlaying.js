@@ -112,12 +112,12 @@ export const usePlaying = () => {
         handleSetTimeline(true)
     }
     useEffect(()=>{
-        if(answerPlayer1 === song?.track.name ) {
+        if(answerPlayer1 === song?.track?.name ) {
             console.log('+1 player 1')
             handleSetTimelineCount(true)
             return handleSetPlayingState('checkAnswer')
         }
-        if(answerPlayer2 === song?.track.name) {
+        if(answerPlayer2 === song?.track?.name) {
             console.log('+1 player 2')
             handleSetTimelineCount(true)
             return handleSetPlayingState('checkAnswer')    
@@ -128,12 +128,12 @@ export const usePlaying = () => {
 
     const checkAnswer = () => {
         handleSetCongratulation(false)
-            if(answerPlayer1 === song?.track.name ) {
+            if(answerPlayer1 === song?.track?.name ) {
             let points1= pointsPlayer1
             handleSetPointsPlayer1(points1+1) 
             }
 
-            if(answerPlayer2 === song?.track.name) {
+            if(answerPlayer2 === song?.track?.name) {
             let points2= pointsPlayer2
             handleSetPointsPlayer2(points2+1)
             }
