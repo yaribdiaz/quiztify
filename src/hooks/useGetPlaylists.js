@@ -43,7 +43,6 @@ export const useGetPlaylists = () => {
                 // Hacer la petición y devolver el nuevo token
                 try {
                   const response = await instance.post('/token', data);
-                  console.log('respuesta', response)
                   return response.data.access_token;
                 } catch (error) {
                   console.error(error);
@@ -54,16 +53,12 @@ export const useGetPlaylists = () => {
               // Crear un interceptor de respuesta para renovar el token si no es válido
               api.interceptors.response.use(
                 response => {
-                  console.log(response)
                   // Si la respuesta tiene éxito, devolverla sin modificar
                   return response;
                 },
                 error => {
-                  console.log('errrorrrr')
                   // Si la respuesta tiene un error, comprobar si es un error de autorización (401)
                   if (error.response && error.response.status === 401) {
-
-                    console.log('errorrrr')
                     // Comprobar si la solicitud original ya ha intentado renovar el token
                     if (error.config._retry) {
                       // Si ya ha intentado renovar el token, devolver el error
@@ -74,7 +69,6 @@ export const useGetPlaylists = () => {
                       // Llamar a la función getNewToken para solicitar un nuevo token
                       return getNewToken()
                         .then(newToken => {
-                          console.log('generando nuevo token', newToken)
                           handleSetSpotifyToken(newToken)
                           // Si se obtiene un nuevo token, actualizar el encabezado de autorización de la solicitud original con el nuevo token
                           error.config.headers['Authorization'] = `Bearer ${newToken}`;
@@ -103,8 +97,6 @@ export const useGetPlaylists = () => {
             },
           })
           .then((res) => {
-            // Guardamos los datos de las playlists en el estado
-            //console.log(res)
             setPlaylists(res.data)
           })
     }
@@ -153,7 +145,6 @@ export const useGetPlaylists = () => {
           // Hacer la petición y devolver el nuevo token
           try {
             const response = await instance.post('/token', data);
-            console.log('respuesta', response)
             return response.data.access_token;
           } catch (error) {
             console.error(error);
@@ -164,16 +155,10 @@ export const useGetPlaylists = () => {
         // Crear un interceptor de respuesta para renovar el token si no es válido
         playlistSearch.interceptors.response.use(
           response => {
-            console.log(response)
-            // Si la respuesta tiene éxito, devolverla sin modificar
             return response;
           },
           error => {
-            console.log('errrorrrr')
-            // Si la respuesta tiene un error, comprobar si es un error de autorización (401)
             if (error.response && error.response.status === 401) {
-
-              console.log('errorrrr')
               // Comprobar si la solicitud original ya ha intentado renovar el token
               if (error.config._retry) {
                 // Si ya ha intentado renovar el token, devolver el error
@@ -184,7 +169,6 @@ export const useGetPlaylists = () => {
                 // Llamar a la función getNewToken para solicitar un nuevo token
                 return getNewToken()
                   .then(newToken => {
-                    console.log('generando nuevo token', newToken)
                     handleSetSpotifyToken(newToken)
                     // Si se obtiene un nuevo token, actualizar el encabezado de autorización de la solicitud original con el nuevo token
                     error.config.headers['Authorization'] = `Bearer ${newToken}`;
@@ -213,8 +197,6 @@ export const useGetPlaylists = () => {
             },
           })
           .then((res) => {
-            // Guardamos los datos de las playlists en el estado
-            //console.log(res)
             setPlaylists(res.data)
           })
 
