@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import CardPlaylists from "../components/CardPlaylists";
 import ChooseGuess from "../components/ChooseGuess";
-import ChoosePlayers from "../components/ChoosePLayers";
 import ChooseSongs from "../components/ChooseSongs";
 import { useChooseStore } from "../hooks/useChooseStore";
 import { useGetPlaylistItems } from "../hooks/useGetPlaylistItems"
@@ -37,11 +36,7 @@ const ChooseMode = () => {
                 </div>
                 <div className="mt-5">
                 <ChooseGuess/>
-                </div>
-                <div className="mt-5">
-                <ChoosePlayers/>
-                </div>
-                
+                </div>        
             </div>
 
             
